@@ -1,0 +1,30 @@
+import Navigation from '@/components/ui/navigation';
+import Hero from '@/components/sections/Hero';
+import Dedicace from '@/components/sections/Dedicace';
+import Citation from '@/components/sections/Citation';
+import Contact from '@/components/sections/Contact';
+
+const Index = () => {
+  return (
+    <div className="min-h-screen">
+      <Navigation />
+      <main>
+        <Hero />
+        <Dedicace />
+        <Citation />
+        <Contact />
+      </main>
+      
+      {/* Footer */}
+      <footer className="bg-primary text-primary-foreground py-8">
+        <div className="container mx-auto px-4 text-center">
+          <p className="text-sm opacity-75">
+            © 2024 Bakayoko Lacina. Portfolio professionnel - Automatisme & Informatique Industrielle
+          </p>
+        </div>
+      </footer>
+    </div>
+  );
+};
+
+export default Index;

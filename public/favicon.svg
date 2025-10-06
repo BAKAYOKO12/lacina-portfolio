@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32">
+  <defs>
+    <linearGradient id="grad1" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background circle -->
+  <circle cx="16" cy="16" r="15" fill="url(#grad1)" stroke="#1e40af" stroke-width="1"/>
+  
+  <!-- Gear/Engine symbol for automation -->
+  <g fill="white" stroke="white" stroke-width="0.5">
+    <!-- Main gear -->
+    <circle cx="16" cy="16" r="4" fill="none" stroke="white" stroke-width="1"/>
+    <circle cx="16" cy="16" r="1.5" fill="white"/>
+    
+    <!-- Gear teeth -->
+    <rect x="15" y="8" width="2" height="2" fill="white"/>
+    <rect x="15" y="22" width="2" height="2" fill="white"/>
+    <rect x="8" y="15" width="2" height="2" fill="white"/>
+    <rect x="22" y="15" width="2" height="2" fill="white"/>
+    
+    <!-- Diagonal teeth -->
+    <rect x="19.5" y="10.5" width="1.5" height="1.5" fill="white" transform="rotate(45 20.25 11.25)"/>
+    <rect x="11" y="19.5" width="1.5" height="1.5" fill="white" transform="rotate(45 11.75 20.25)"/>
+    <rect x="19.5" y="20.5" width="1.5" height="1.5" fill="white" transform="rotate(45 20.25 21.25)"/>
+    <rect x="11" y="10.5" width="1.5" height="1.5" fill="white" transform="rotate(45 11.75 11.25)"/>
+  </g>
+  
+  <!-- Circuit/automation lines -->
+  <g stroke="white" stroke-width="0.8" fill="none" opacity="0.7">
+    <path d="M6 6 L10 6 L10 8 L14 8"/>
+    <path d="M18 8 L22 8 L22 6 L26 6"/>
+    <path d="M26 10 L26 14 L24 14"/>
+    <path d="M24 18 L26 18 L26 22 L22 22"/>
+    <path d="M18 24 L22 24 L22 26 L6 26"/>
+    <path d="M6 22 L6 18 L8 18"/>
+    <path d="M8 14 L6 14 L6 10 L10 10"/>
+  </g>
+</svg>
