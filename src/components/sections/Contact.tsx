@@ -9,6 +9,8 @@ import { useSecurity } from '@/hooks/use-security';
 import { useCVDownload } from '@/hooks/use-cv-download';
 import SecurityDialog from '@/components/ui/security-dialog';
 import CVDownloadDialog from '@/components/ui/cv-download-dialog';
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '@/config/emailjs';
 import { 
   Mail, 
   Phone, 
@@ -57,9 +59,23 @@ const Contact = () => {
     e.preventDefault();
     setIsLoading(true);
 
-    // Simulation d'envoi d'email
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Paramètres du template EmailJS
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: EMAILJS_CONFIG.TO_EMAIL
+      };
+
+      // Envoi de l'email via EmailJS
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        templateParams,
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
       
       toast({
         title: "Message envoyé !",
@@ -73,6 +89,7 @@ const Contact = () => {
         message: ''
       });
     } catch (error) {
+      console.error('Erreur EmailJS:', error);
       toast({
         title: "Erreur",
         description: "Une erreur est survenue lors de l'envoi du message. Veuillez réessayer.",

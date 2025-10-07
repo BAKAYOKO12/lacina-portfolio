@@ -204,20 +204,20 @@ const Hero = () => {
         {/* Enhanced Stats with glassmorphism */}
         <div className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mt-8 md:mt-12 lg:mt-16 animate-counter">
           {[
-            { value: '+10', label: 'Projets académiques' },
-            { value: '2', label: 'Expériences pro' },
-            { value: '+10', label: 'Logiciels maîtrisés' },
-            { value: '+2', label: 'Langues' }
+            { value: '+10', label: 'Projets académiques', link: '/projets' },
+            { value: '2', label: 'Expériences pro', link: '/experiences' },
+            { value: '+10', label: 'Logiciels maîtrisés', link: '/competences' },
+            { value: '+2', label: 'Langues', link: '/competences' }
           ].map((stat, index) => (
-            <div key={index} className="text-center text-white group">
-              <div className="relative backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl md:rounded-2xl p-3 sm:p-4 hover:bg-white/10 hover:border-accent/30 transition-all duration-300">
+            <a key={index} href={stat.link} className="text-center text-white group block">
+              <div className="relative backdrop-blur-sm bg-white/5 border border-white/10 rounded-xl md:rounded-2xl p-3 sm:p-4 hover:bg-white/10 hover:border-accent/30 transition-all duration-300 cursor-pointer">
                 <div className="absolute inset-0 bg-gradient-to-br from-accent/5 to-primary/5 rounded-xl md:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 <div className="relative">
                   <div className="text-2xl sm:text-3xl font-bold text-accent mb-1 sm:mb-2 group-hover:scale-110 transition-transform duration-300">{stat.value}</div>
                   <div className="text-xs sm:text-sm opacity-75 leading-tight">{stat.label}</div>
                 </div>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
